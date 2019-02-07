@@ -1,0 +1,15 @@
+
+{% extends 'base.html' %}
+{% block body %}
+    <h1 class="text-center">회원 명부</h1>
+     <!--<a href="/users/new">가입하기</a>-->
+     <hr>
+    {% for user in users %}
+        <p>{{user.id}} : {{user.username}} </p>
+        <p>{{user.email}}</p>
+        <a href="/users/read/{{user.id}}">상세보기  </a> &nbsp;
+        <a href="/users/delete/{{user.id}}">삭제하기  </a> &nbsp;
+        <a href="/users/edit/{{user.id}}">수정하기  </a> &nbsp;
+        <hr>
+    {% endfor %}
+{% endblock %}
